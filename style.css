@@ -1,7 +1,4 @@
-:root {
-    --grid-cols: 1;
-    --grid-rows: 1;
-}
+
 *,
 *::before,
 *::after {
@@ -14,16 +11,13 @@ body{
 }
 .grids-container {
     background-color: white;
-    max-width: 600px;
-    max-height: 600px;
-    display: grid;
+    width: 600px;
+    height: 600px;
     grid-gap: 0;
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
-    grid-template-columns: repeat(var(--grid-cols), 1fr);
     border: 5px solid black;
 }
   .cell {
-    padding: 1em;
+    padding: 0;
     border: 1px solid black;
   }
   .black {

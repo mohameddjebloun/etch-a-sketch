@@ -12,9 +12,10 @@ function makeGrid(n=16){
         }
     //Append htmlDivs to gridContainer
     gridContainer.innerHTML+= htmlDivs;
-    //Use css variables
-    gridContainer.style.setProperty('--grid-rows', n);
-    gridContainer.style.setProperty('--grid-cols', n);
+    //Create the grid using css styles
+    gridContainer.style.display ='grid';
+    gridContainer.style.gridTemplateRows= `repeat(${n}, 1fr)`;
+    gridContainer.style.gridTemplateColumns= `repeat(${n}, 1fr)`;
 }
 //Create variable gridContainer that stores the grids-container div 
 const gridContainer = document.querySelector('.grids-container');
