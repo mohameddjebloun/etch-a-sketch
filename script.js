@@ -1,6 +1,8 @@
 //Create the function makeGrid that takes the parameter n and draws a nXn grid of square divs
 //Declare makeGrid function
 function makeGrid(n=16){
+    //Reset the grid container
+    gridContainer.innerHTML = '';
     //Create an empty string variable htmlDivs
     let htmlDivs = '';
     //For i starting from 1 to n*n
@@ -24,6 +26,20 @@ const cells = document.querySelectorAll('.cell');
 cells.forEach(cell => {
     cell.addEventListener('mouseenter',()=>{
         //Change cell's background color to black
-        cell.style.backgroundColor = 'black';
+        cell.classList.add('black');
     })
 });
+//Create a variable button for the button element
+const button = document.querySelector('button');
+//Add an event listener to the button that prompts the user for a number between 1 and 100
+button.addEventListener('click',function changeGrid(){
+    let newSize = prompt("Give a number between 1 and 100");
+    //Check if the input is a number and is between 1 and 100
+    if((typeof(+newSize)===typeof(1)) &&((+newSize >=1)&&(+newSize<=100))){
+        //Create a new grid newSizeXnewSize
+        makeGrid(+newSize);
+    }
+    else{
+        return changeGrid();
+    }
+})
