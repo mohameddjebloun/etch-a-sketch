@@ -18,3 +18,12 @@ function makeGrid(n=16){
 const gridContainer = document.querySelector('.grids-container');
 //Call the function makeGrid
 makeGrid();
+//Create a variable cells where you store all the grid cells
+const cells = document.querySelectorAll('.cell');
+//For each cell add a hover event listener
+cells.forEach(cell => {
+    cell.addEventListener('mouseenter',()=>{
+        //Change cell's background color to black
+        cell.style.backgroundColor = 'black';
+    })
+});
