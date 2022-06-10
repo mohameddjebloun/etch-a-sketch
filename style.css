@@ -9,6 +9,10 @@
 body{
     background-color: gray;
 }
+header h1{
+    text-align: center;
+    padding: 1em;
+}
 .container {
     display: flex;
     justify-content: center;
@@ -31,7 +35,33 @@ body{
     padding: 0;
     border: 1px solid black;
   }
+  button {
+    padding: 1em;
+    margin: 1em;
+    border-radius: 2em;
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+  }
   .black {
       background-color: black;
       color: white;
+  }
+  .black:hover {
+    background-color: white;
+    color: black;
+  }
+  .random {
+    background: linear-gradient(0.25turn, #f65cfc, #ebf8e1, #583cf6);
+  }
+  .random:hover {
+    background: linear-gradient(0.25turn, #20ff02, #ebf8e1, #aecc03);
+  }
+  .eraser {
+    background-color: white;
+    color: black;
+  }
+  .eraser:hover {
+    background-color: white;
+    color: white;
   }
