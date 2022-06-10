@@ -1,3 +1,5 @@
+//Create variable color and set it to 'black'
+let color = 'black';
 //Create the function makeGrid that takes the parameter n and draws a nXn grid of square divs
 //Declare makeGrid function
 function makeGrid(n=16){
@@ -21,8 +23,13 @@ function makeGrid(n=16){
     //For each cell add a hover event listener
     cells.forEach(cell => {
         cell.addEventListener('mouseenter',()=>{
-            //Change cell's background color to black
-            cell.classList.add('black');
+            //Change cell's background color to color
+            if (color === "random") {
+                cell.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+              } 
+            else {
+                cell.style.backgroundColor = color;
+              }
         })
     });
 }
@@ -31,9 +38,9 @@ const gridContainer = document.querySelector('.grids-container');
 //Call the function makeGrid
 makeGrid();
 //Create a variable button for the button element
-const button = document.querySelector('button');
+const gridSizeBtn = document.querySelector('.change-grid');
 //Add an event listener to the button that prompts the user for a number between 1 and 100
-button.addEventListener('click',function changeGrid(){
+gridSizeBtn.addEventListener('click',function changeGrid(){
     let newSize = prompt("Give a number between 1 and 100");
     //Check if the input is a number and is between 1 and 100
     if((typeof(+newSize)===typeof(1)) &&((+newSize >=1)&&(+newSize<=100))){
@@ -45,3 +52,7 @@ button.addEventListener('click',function changeGrid(){
         return changeGrid();
     }
 })
+//Create function changeColor that changes the value of the color variable
+function changeColor(newColor){
+    color = newColor;
+}
