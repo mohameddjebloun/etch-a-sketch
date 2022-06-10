@@ -14,6 +14,12 @@ body{
     justify-content: center;
     margin: 10em;
 }
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 1em;
+}
 .grids-container {
     background-color: white;
     width: 600px;
